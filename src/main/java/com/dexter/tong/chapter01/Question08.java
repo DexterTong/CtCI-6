@@ -15,10 +15,10 @@ public class Question08 {
             return null;
         }
 
-        //Check that 2d array is not "jagged"
+        //Check that 2d array is not "jagged", and check for null rows
         int colSize = matrix[0].length;
         for(int i = 1; i < matrix.length; i++) {
-            if(matrix[i].length != colSize) {
+            if (matrix[i] == null || matrix[i].length != colSize) {
                 return null;
             }
         }
