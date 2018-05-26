@@ -14,7 +14,7 @@ public class Question03Test {
         char[] input = StringToCharArray(preInput);
         String expected = preInput.replace(" ", "%20");
 
-        assertEquals(Question03.urlify(input), expected);
+        assertEquals(expected, Question03.urlify(input));
     }
 
     @Test
@@ -23,7 +23,7 @@ public class Question03Test {
         char[] input = StringToCharArray(preInput);
         String expected = preInput.replace(" ", "%20");
 
-        assertEquals(Question03.urlify(input), expected);
+        assertEquals(expected, Question03.urlify(input));
     }
 
     @Test
@@ -32,7 +32,7 @@ public class Question03Test {
         char[] input = StringToCharArray(preInput);
         String expected = preInput.replace(" ", "%20");
 
-        assertEquals(Question03.urlify(input), expected);
+        assertEquals(expected, Question03.urlify(input));
     }
 
     @Test
@@ -41,7 +41,7 @@ public class Question03Test {
         char[] input = StringToCharArray(preInput);
         String expected = preInput.replace(" ", "%20");
 
-        assertEquals(Question03.urlify(input), expected);
+        assertEquals(expected, Question03.urlify(input));
     }
 
     private char[] StringToCharArray(String str) {
