@@ -60,6 +60,7 @@ public class Question04 {
         if(gteHead != null)
             gteTail.next = null;
 
+        // If ltHead is null, then all the original list elements are in the gte list
         if(ltHead != null)
             return ltHead;
         else
