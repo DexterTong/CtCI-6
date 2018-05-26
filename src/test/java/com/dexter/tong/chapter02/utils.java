@@ -17,4 +17,22 @@ public class utils {
         return head;
     }
 
+    // Get the node that is index jumps down the linked list from head, i.e. index == 0 returns head and
+    // index == 1 returns head.next
+    public static LinkedListNode<Integer> get(LinkedListNode<Integer> head, int index) {
+
+        if(index < 0) {
+            return null;
+        }
+
+        LinkedListNode<Integer> current = head;
+        for(int i = 0; i < index; i++) {
+            if(current == null) {
+                return null;
+            }
+            current = current.next;
+        }
+
+        return current;
+    }
 }
