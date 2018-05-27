@@ -28,12 +28,12 @@ public class Question06Test {
     @Test
     public void should_be_false_when_odd_sized_and_not_palindrome() {
         LinkedListNode<Integer> head = utils.createLinkedList(new Integer[]{4, 1, 6, 7, 6, 2, 4});
-        assertTrue(Question06.isPalindrome(head));
+        assertFalse(Question06.isPalindrome(head));
     }
 
     @Test
     public void should_be_false_when_even_sized_and_not_palindrome() {
         LinkedListNode<Integer> head = utils.createLinkedList(new Integer[]{3, 6, 0, 0, 6, 4});
-        assertTrue(Question06.isPalindrome(head));
+        assertFalse(Question06.isPalindrome(head));
     }
 }

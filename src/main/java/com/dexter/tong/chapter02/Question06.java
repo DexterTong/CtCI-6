@@ -46,7 +46,7 @@ public class Question06 {
         }
 
         while(slow != null) {
-            if( slow.data.equals(stack.pop().data)) {
+            if( !slow.data.equals(stack.pop().data)) {
                 return false;
             }
             slow = slow.next;
