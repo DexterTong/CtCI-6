@@ -9,6 +9,8 @@ public class Question05 {
      * Write a program to sort a stack such that the smallest items are on the top. You can use
      * an additional temporary stack, but you may not copy the elements into any other data structure
      * (such as an array). The stack supports the following operations: push, pop, peek, and isEmpty.
+     * Time: O(n^2)
+     * Space: O(n)
      */
     public static void sort(LinkedList<Integer> stack) {
         LinkedList<Integer> maxStack = new LinkedList<>();
