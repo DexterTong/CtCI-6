@@ -10,4 +10,8 @@ public class GraphNode<T> {
         this.data = data;
         this.children = new ArrayList<>();
     }
+
+    public String toString() {
+        return this.data.toString();
+    }
 }
