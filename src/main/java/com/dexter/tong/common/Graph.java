@@ -13,8 +13,7 @@ public class Graph<T> {
 
     /*
     While using a boolean array for the adjacency matrix would be more optimal from a space+time perspective, it is much
-    harder to read a 2D array of trues and falses than one of 0s and 1s. Besides, this is only a constructor and would
-    not be a performance bottleneck.
+    harder to read a 2D array of trues and falses than one of 0s and 1s.
     */
     public Graph(T[] graphNodeValues, Integer[][] adjacencyMatrix) {
 
@@ -40,5 +39,13 @@ public class Graph<T> {
                     current.children.add(nodes.get(j));
             }
         }
+    }
+
+    public GraphNode<T> getByValue(T value) {
+        for(GraphNode<T> node : nodes) {
+            if(node.data.equals(value))
+                return node;
+        }
+        return null;
     }
 }
