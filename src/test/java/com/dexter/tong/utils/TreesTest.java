@@ -16,7 +16,7 @@ public class TreesTest {
     public void initialize() {
         root = new BSTNode<>(10);
         for (Integer n : new Integer[]{14, 7, 8, 3, 20, 13, 9, 12}) {
-            insertIntoBST(n, root);
+            Trees.insertIntoBST(n, root);
         }
     }
 
@@ -35,17 +35,4 @@ public class TreesTest {
         assertEquals(Arrays.asList(3, 9, 8, 7, 12, 13, 20, 14, 10), Trees.postOrderTraversal(root));
     }
 
-    private static void insertIntoBST(Integer value, BSTNode<Integer> root) {
-        if (value <= root.data) {
-            if (root.left == null)
-                root.left = new BSTNode<>(value);
-            else
-                insertIntoBST(value, root.left);
-        } else {
-            if (root.right == null)
-                root.right = new BSTNode<>(value);
-            else
-                insertIntoBST(value, root.right);
-        }
-    }
 }
