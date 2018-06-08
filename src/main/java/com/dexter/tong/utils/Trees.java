@@ -41,14 +41,18 @@ public class Trees{
 
     public static void insertIntoBST(Integer value, BinaryTreeNode<Integer> root) {
         if (value <= root.data) {
-            if (root.left == null)
-                root.left = new BinaryTreeNode<>(value);
-            else
+            if (root.left == null) {
+                BinaryTreeNode<Integer> newNode = new BinaryTreeNode<>(value);
+                newNode.parent = root;
+                root.left = newNode;
+            } else
                 insertIntoBST(value, root.left);
         } else {
-            if (root.right == null)
-                root.right = new BinaryTreeNode<>(value);
-            else
+            if (root.right == null) {
+                BinaryTreeNode<Integer> newNode = new BinaryTreeNode<>(value);
+                newNode.parent = root;
+                root.right = newNode;
+            } else
                 insertIntoBST(value, root.right);
         }
     }
@@ -62,5 +66,15 @@ public class Trees{
             insertIntoBST(iter.next(), root);
         }
         return root;
+    }
+
+    public static BinaryTreeNode<Integer> getNodeFromBST(Integer valueToFind, BinaryTreeNode<Integer> root) {
+        if(root == null)
+            return null;
+        if(root.data.equals(valueToFind))
+            return root;
+        if(valueToFind < root.data)
+            return getNodeFromBST(valueToFind, root.left);
+        return getNodeFromBST(valueToFind, root.right);
     }
 }
