@@ -1,6 +1,6 @@
 package com.dexter.tong.utils;
 
-import com.dexter.tong.common.BSTNode;
+import com.dexter.tong.common.BinaryTreeNode;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,11 +10,11 @@ import static org.junit.Assert.*;
 
 public class TreesTest {
 
-    private BSTNode<Integer> root;
+    private BinaryTreeNode<Integer> root;
 
     @Before
     public void initialize() {
-        root = new BSTNode<>(10);
+        root = new BinaryTreeNode<>(10);
         for (Integer n : new Integer[]{14, 7, 8, 3, 20, 13, 9, 12}) {
             Trees.insertIntoBST(n, root);
         }

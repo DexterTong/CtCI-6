@@ -1,11 +1,11 @@
 package com.dexter.tong.common;
 
-public class BSTNode<T> {
+public class BinaryTreeNode<T> {
     public T data;
-    public BSTNode<T> left;
-    public BSTNode<T> right;
+    public BinaryTreeNode<T> left;
+    public BinaryTreeNode<T> right;
 
-    public BSTNode(T data) {
+    public BinaryTreeNode(T data) {
         this.data = data;
     }
 

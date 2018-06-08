@@ -1,6 +1,6 @@
 package com.dexter.tong.utils;
 
-import com.dexter.tong.common.BSTNode;
+import com.dexter.tong.common.BinaryTreeNode;
 
 import java.util.Arrays;
 import java.util.Iterator;
@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Trees{
 
-    public static <T> List<T> inOrderTraversal(BSTNode<T> node) {
+    public static <T> List<T> inOrderTraversal(BinaryTreeNode<T> node) {
         if(node == null)
             return new LinkedList<>();
         LinkedList<T> values = new LinkedList<>();
@@ -19,7 +19,7 @@ public class Trees{
         return values;
     }
 
-    public static <T> List<T> preOrderTraversal(BSTNode<T> node) {
+    public static <T> List<T> preOrderTraversal(BinaryTreeNode<T> node) {
         if(node == null)
             return new LinkedList<>();
         LinkedList<T> values = new LinkedList<>();
@@ -29,7 +29,7 @@ public class Trees{
         return values;
     }
 
-    public static <T> List<T> postOrderTraversal(BSTNode<T> node) {
+    public static <T> List<T> postOrderTraversal(BinaryTreeNode<T> node) {
         if(node == null)
             return new LinkedList<>();
         LinkedList<T> values = new LinkedList<>();
@@ -39,25 +39,25 @@ public class Trees{
         return values;
     }
 
-    public static void insertIntoBST(Integer value, BSTNode<Integer> root) {
+    public static void insertIntoBST(Integer value, BinaryTreeNode<Integer> root) {
         if (value <= root.data) {
             if (root.left == null)
-                root.left = new BSTNode<>(value);
+                root.left = new BinaryTreeNode<>(value);
             else
                 insertIntoBST(value, root.left);
         } else {
             if (root.right == null)
-                root.right = new BSTNode<>(value);
+                root.right = new BinaryTreeNode<>(value);
             else
                 insertIntoBST(value, root.right);
         }
     }
 
-    public static BSTNode<Integer> initializeBST(Integer[] values) {
+    public static BinaryTreeNode<Integer> initializeBST(Integer[] values) {
         Iterator<Integer> iter = Arrays.stream(values).iterator();
         if(!iter.hasNext())
             return null;
-        BSTNode<Integer> root = new BSTNode<>(iter.next());
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(iter.next());
         while(iter.hasNext()) {
             insertIntoBST(iter.next(), root);
         }
