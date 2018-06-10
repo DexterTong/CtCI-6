@@ -41,6 +41,10 @@ public class Graph<T> {
         }
     }
 
+    public void add(GraphNode<T> graphNode) {
+        nodes.add(graphNode);
+    }
+
     public GraphNode<T> getByValue(T value) {
         for(GraphNode<T> node : nodes) {
             if(node.data.equals(value))
