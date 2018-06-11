@@ -19,7 +19,8 @@ public class Question12Test {
     // Will come back to this when I have paper to draw the tree
     @Test
     public void should_return_number_of_paths_with_sum() {
-        assertEquals(-1, Question12.pathsWithSum(root, 10));
+        assertEquals(3, Question12.pathsWithSum(root, -5));
+        assertEquals(4, Question12.pathsWithSum(root, 12));
     }
 
     @Test
