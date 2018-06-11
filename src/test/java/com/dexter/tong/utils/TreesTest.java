@@ -35,4 +35,8 @@ public class TreesTest {
         assertEquals(Arrays.asList(3, 9, 8, 7, 12, 13, 20, 14, 10), Trees.postOrderTraversal(root));
     }
 
+    @Test
+    public void getSize_should_return_size_of_tree() {
+        assertEquals(9, Trees.getSize(root));
+    }
 }

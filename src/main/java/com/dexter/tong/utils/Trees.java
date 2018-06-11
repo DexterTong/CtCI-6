@@ -77,4 +77,10 @@ public class Trees{
             return getNodeFromBST(valueToFind, root.left);
         return getNodeFromBST(valueToFind, root.right);
     }
+
+    public static int getSize(BinaryTreeNode root) {
+        if(root == null)
+            return 0;
+        return 1 + getSize(root.left) + getSize(root.right);
+    }
 }
