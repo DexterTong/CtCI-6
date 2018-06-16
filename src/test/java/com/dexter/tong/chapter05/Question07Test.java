@@ -13,6 +13,11 @@ public class Question07Test {
 
     @Test
     public void should_swap_bit_pairs2() {
+        assertEquals(0b01010101010101010101010101010101, Question07.swapBitPairs(0b10101010101010101010101010101010));
+    }
+
+    @Test
+    public void should_swap_bit_pairs3() {
         assertEquals(0b11100101, Question07.swapBitPairs(0b11011010));
     }
 }

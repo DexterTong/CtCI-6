@@ -7,26 +7,22 @@ public class Question07 {
      * Write a program to swap odd and even bits in an integer with as few instructions as
      * possible (e.g., bit 0 and bit 1 are swapped, bit 2 and bit 3 are swapped, and so on).
      */
-    public static int swapBitPairs(int num) {
-
-        // To save some cycles, assume that an int has exactly 32 bits
-        // This mask has 1's at all the odd bits and 0's at all the even bits (zero-indexing)
-        final int mask = 0b10101010101010101010101010101010;
-
+    public static int swapBitPairs(int num) {;
         /*
         What's happening in this one-liner:
             1.
-                (num & mask) >>> 1
+                (num & 0xAAAAAAAA) >>> 1
                 Get all the odd bits, then logical rshift by 1 to put them in the other bit index of the pair
+                Note, 0xAAAAAAAA is equivalent to 0b10...10, i.e. 0s at the even bits and 1s at the odds (zero-indexed)
             2.
-                (num & (mask >>> 1)) << 1
-                Logical rshift the mask by 1 bit, so the 1's are in the even bit indices
-                Then AND with num to get the even bits of num
+                (num & 0x55555555) << 1
+                AND num with the mask to get the even bits of num
+                Note, 0x55555555 is equivalent to 0b01...01, i.e. 1s at the even bits and 0s at the odds (zero-indexed)
                 Finally, lshift the result by 1 bit to line it up with the other bit index of the pair
             3.
                 OR the two results and then return it, as the flipped number
          */
-        return ((num & mask) >>> 1) | ((num & (mask >>> 1)) << 1);
+        return ((num & 0xAAAAAAAA) >>> 1) | ((num & 0x55555555) << 1);
 
         /*
         In total, we have done this in 7 bitwise operations, if we count initializing the mask as 1 operation
