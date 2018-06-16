@@ -7,6 +7,9 @@ public class Question04 {
      * Given a positive integer, print the next smallest and the next largest number that
      * have the same number of 1 bits in their binary representation.
      */
+    /*
+    I admit this method is a total mess.
+     */
     public static int[] nextNumber(int num) {
         if(num < 0)
             throw new IllegalArgumentException();
