@@ -27,6 +27,7 @@ public class Question08Test {
     @Test(expected = NoSuchElementException.class)
     public void should_throw_exception_when_tree_is_null() {
         question08.getLowestCommonAncestor(null, null, null);
+        fail("NoSuchElementException should have been thrown");
     }
 
     @Test(expected = NoSuchElementException.class)
@@ -34,6 +35,7 @@ public class Question08Test {
         BinaryTreeNode<Integer> childA = Trees.getNodeFromBST(9, root);
         BinaryTreeNode<Integer> childB = new BinaryTreeNode<>(21);
         question08.getLowestCommonAncestor(root, childA, childB);
+        fail("NoSuchElementException should have been thrown");
     }
 
     @Test()

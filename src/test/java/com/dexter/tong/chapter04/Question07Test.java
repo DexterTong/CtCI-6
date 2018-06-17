@@ -42,5 +42,6 @@ public class Question07Test {
         Character[][] dependencyList = {{'a', 'd'}, {'f', 'b'}, {'b', 'd'}, {'f', 'a'}, {'d', 'c'}, {'c', 'b'}};
 
         question07.getBuildOrder(projectNames, dependencyList);
+        fail("RuntimeException should have been thrown");
     }
 }
