@@ -41,4 +41,10 @@ public class Question03Test {
         int[] input = new int[]{-1, 0, 1, 4, 5, 6};
         assertEquals(-1, Question03.indistinctMagicIndex(input));
     }
+
+    @Test
+    public void test_indistinctMagicIndex_when_duplicates(){
+        int[] input = new int[]{-1, 0, 4, 4, 4, 6};
+        assertEquals(4, Question03.indistinctMagicIndex(input));
+    }
 }
