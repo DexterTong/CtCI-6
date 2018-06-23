@@ -27,7 +27,7 @@ public class Question07 {
                 StringBuilder r = new StringBuilder(permutation.remaining);
                 p.append(r.charAt(i));
                 r.deleteCharAt(i);
-                children.add(new Permutation(p.toString(), r.toString()));
+                children.add(new Permutation(p, r));
             }
         }
 
@@ -40,7 +40,7 @@ public class Question07 {
         private StringBuilder permutation;
         private StringBuilder remaining;
 
-        public Permutation(String permutation, String remaining) {
+        public Permutation(CharSequence permutation, CharSequence remaining) {
             this.permutation = new StringBuilder(permutation);
             this.remaining = new StringBuilder(remaining);
         }
