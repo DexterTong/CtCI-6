@@ -25,13 +25,24 @@ public class Question06 {
 
         if(disk < 1)
             return;
-
         int staging = 3 - (src + dest);
 
         towerOfHanoi(disk-1, src, staging, towers);
         towers.get(dest).push(towers.get(src).pop());
         towerOfHanoi(disk-1, staging, dest, towers);
     }
+    /*
+    To move n disks from tower 0 to tower 2, we must do:
+        1. Move disks 1 to n-1 from tower 0 to tower 1
+        2. Move disk n from tower 0 to tower 2
+        3. Move disks 1 to n-1 from tower 1 to tower 2
+    Note that step 1 is solving the towers of Hanoi for n-1 disks, except we move the tower to tower 1 instead of tower 2
+    Likewise, step 3 is solving it for n-1 disks, except we move from tower 1 (instead of tower 0)
+    This gives us a natural recursive solution where we keep reducing the problem until it is trivial (where n == 1)
+    We just need to make sure that the source, "staging", and destination towers are shuffled correctly
+     */
+
+
 
     public static ArrayList<LinkedList<Integer>> initializeTowers(int size, int dest) {
         final int towerCount = 3;
