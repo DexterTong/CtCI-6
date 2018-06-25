@@ -2,9 +2,9 @@ package com.dexter.tong.chapter10;
 
 import java.util.BitSet;
 
-public class Question06 {
+public class Question07 {
     /**
-     * 10.6
+     * 10.7
      * Given an input file with four billion non-negative integers, provide an algorithm to
      * generate an integer that is not contained in the file. Assume you have 1 GB of memory available for
      * this task.
