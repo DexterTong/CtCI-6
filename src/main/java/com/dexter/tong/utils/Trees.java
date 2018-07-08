@@ -19,6 +19,16 @@ public class Trees{
         return values;
     }
 
+    public static <T> List<BinaryTreeNode<T>> inOrderNodeTraversal(BinaryTreeNode<T> node) {
+        if(node == null)
+            return new LinkedList<>();
+        LinkedList<BinaryTreeNode<T>> values = new LinkedList<>();
+        values.addAll(inOrderNodeTraversal(node.left));
+        values.add(node);
+        values.addAll(inOrderNodeTraversal(node.right));
+        return values;
+    }
+
     public static <T> List<T> preOrderTraversal(BinaryTreeNode<T> node) {
         if(node == null)
             return new LinkedList<>();
@@ -76,6 +86,31 @@ public class Trees{
         if(valueToFind < root.data)
             return getNodeFromBST(valueToFind, root.left);
         return getNodeFromBST(valueToFind, root.right);
+    }
+
+    public static BinaryTreeNode<Integer> removeFromBST(Integer value, BinaryTreeNode<Integer> root) {
+        BinaryTreeNode<Integer> node = getNodeFromBST(value, root);
+        if(node == null)
+            return null;
+
+        if(node.left != null && node.right != null) {
+            // Find successor
+            // replace node with its successor
+            // remember to remove successor from old position
+            // update the parent field
+            return node;
+        }
+
+        BinaryTreeNode<Integer> parent = node.parent;
+        BinaryTreeNode<Integer> child = node.left != null ? node.left : node.right;
+        if(parent.left == node)
+            parent.left = child;
+        else
+            parent.right = child;
+        if(child != null)
+            child.parent = parent;
+
+        return  node;
     }
 
     public static int getSize(BinaryTreeNode root) {

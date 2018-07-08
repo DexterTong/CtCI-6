@@ -11,10 +11,6 @@ public class Graph<T> {
         nodes = new ArrayList<>();
     }
 
-    /*
-    While using a boolean array for the adjacency matrix would be more optimal from a space+time perspective, it is much
-    harder to read a 2D array of trues and falses than one of 0s and 1s.
-    */
     public Graph(T[] graphNodeValues, Integer[][] adjacencyMatrix) {
 
         int nodeCount = graphNodeValues.length;
