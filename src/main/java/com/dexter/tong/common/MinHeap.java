@@ -2,11 +2,16 @@ package com.dexter.tong.common;
 
 import com.dexter.tong.sorts.utils;
 
+import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 public class MinHeap {
     private int[] nodes;
     private int size;
+
+    public MinHeap() {
+        this(1000);
+    }
 
     public MinHeap(int capacity) {
         size = 0;
@@ -86,5 +91,9 @@ public class MinHeap {
             utils.swap(i, min, nodes);
             minHeapify(min);
         }
+    }
+
+    public int[] toArray() {
+        return Arrays.copyOf(nodes, size);
     }
 }
